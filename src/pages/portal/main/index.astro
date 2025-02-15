@@ -1,0 +1,21 @@
+---
+import '../_assets/styles/styles.css'
+
+import Layout from '@layouts/Layout.astro';
+import Header from '../_partials/header.astro';
+import Footer from '../_partials/footer.astro';
+
+import ContentHero from './_content-hero.astro';
+import ContentGridCard from './_content-grid-card.astro';
+
+---
+
+<Layout>
+    <Header />
+    <ContentHero />
+    <main class="main-content">
+        <ContentGridCard />
+
+    </main>
+    <Footer />
+</Layout>
