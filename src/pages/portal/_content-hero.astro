@@ -1,0 +1,41 @@
+<section class="hero">
+    <div class="image image-overlay" style="background-image:url(https://webuildthemes.com/guidebook/assets/images/image-1.jpg)"></div>
+    <div class="container">
+        <div class="row">
+          <div class="col text-white">
+            <h1 class="mb-2">What are you looking for ?</h1>
+          </div>
+        </div>
+    </div>
+</section>
+
+<style is:inline>
+    .hero {
+        
+        position: relative;
+        margin: 0 auto;
+        padding: 6.25rem 0;
+        padding-top: 14.5rem;
+        overflow: hidden;
+        width: 100%;
+    }
+    .image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+    .image[class*="-overlay"]::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background: rgba(0, 0, 0, 0.55);
+    }
+</style>
