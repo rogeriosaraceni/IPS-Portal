@@ -2,8 +2,8 @@
 import '../_assets/styles/styles.css'
 
 import Layout from '@layouts/Layout.astro';
-import Header from '../_partials/header.astro';
-import Footer from '../_partials/footer.astro';
+import Header from '@includesPortal/header.astro';
+import Footer from '@includesPortal/footer.astro';
 
 import ContentHero from './_content-hero.astro';
 import ContentGridCard from './_content-grid-card.astro';
@@ -14,8 +14,9 @@ import ContentGridCard from './_content-grid-card.astro';
     <Header />
     <ContentHero />
     <main class="main-content">
-        <ContentGridCard />
-
+        <div class="container">
+            <ContentGridCard />
+        </div>
     </main>
     <Footer />
 </Layout>

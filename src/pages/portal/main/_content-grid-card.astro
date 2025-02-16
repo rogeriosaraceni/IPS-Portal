@@ -1,71 +1,86 @@
-<section class="overlay">
-    <div class="container overlay-item-top">
-        <div class="row gutter-3">
-            <div class="col-md-6 col-lg-6">
-                <div class="card border-0 text-center shadow">
-                    <div class="card-body">
-                        <i class="bi bi-clipboard2-check icon-boxed mb-3 bg-danger text-white"></i>
-                        <h3 class="card-title mb-1">IPS</h3>
-                        <p class="card-text mb-2">
-                            Safely store your ETH and other Ethereum crypto-assets.
-                        </p>
-                        <a href="#" class="eyebrow link text-danger">View</a>
-                    </div>
+<div class="overflow-visible">
+    <section class="grid-main">
+        <a class="item" href="/systems/ips/main/">
+            <div class="card bg-transparent border-0">
+                <div class="card-body">
+                    <i class="bi bi-trophy icon-boxed bg-danger"></i>
+                    <h3 class="card-title mb-1">IPS</h3>
+                    <p class="card-text mb-2">
+                        Complete the assessment in the Checklist.
+                    </p>
+                    <span class="btn-view text-danger">View</span>
                 </div>
             </div>
+        </a>
 
-            <div class="col-md-6 col-lg-6">
-                <div class="card border-0 text-center shadow">
-                    <div class="card-body">
-                        <i class="bi bi-trophy icon-boxed mb-3 bg-primary text-white"></i>
-                        <h3 class="card-title mb-1">Best Practices</h3>
-                        <p class="card-text mb-2">
-                            Safely store your ETH and other Ethereum crypto-assets.
-                        </p>
-                        <a href="#" class="eyebrow link text-primary">View</a>
-                    </div>
+        <a class="item" href="/systems/best_practices/main/">
+            <div class="card bg-transparent border-0">
+                <div class="card-body">
+                    <i class="bi bi-clipboard2-check icon-boxed bg-primary"></i>
+                    <h3 class="card-title mb-1">Best Practices</h3>
+                    <p class="card-text mb-2">
+                        View and submit your best practice here!
+                    </p>
+                    <span class="btn-view text-primary">View</span>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </a>
+    </section>
+</div>
 
 <style is:inline>
-    .overlay {
-        overflow: visible;
-    }
-
-    .overlay .overlay-item-top {
+    .grid-main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 20px 20px;
         margin-top: -3.5rem;
     }
-
+    .grid-main .item{
+        overflow: hidden;
+        justify-self: stretch;
+        align-self: stretch;
+        margin-bottom: 1rem;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0.3rem;
+        transition: all 0.2s;
+        background-color: #fff;
+        box-shadow: var(--bs-box-shadow) !important;
+    }
+    .grid-main .item:hover{
+        background-color: #f1f1f1;
+    }
+    @media (max-width: 576px) {
+        .grid-main {
+            grid-template-columns: 1fr;
+        }
+    }
     .icon-boxed {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 1rem;
         vertical-align: top;
-        background: #f5f5f5;
-        color: #222;
-        border-radius: 50%;
         width: 5rem;
         height: 5rem;
+        color: #fff;
         font-size: 2rem;
+        border-radius: 50%;
+        background: #242323;
     }
 
-    .link {
+    .btn-view{
         display: inline-block;
         position: relative;
-    }
-
-    .eyebrow{
         text-decoration: none;
-        background-color: transparent;
         font-size: 0.875rem;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         font-weight: 600;
+        background-color: transparent;
     }
-    .link::before {
+    .btn-view::before {
         -webkit-transition: all 0.2s;
         -moz-transition: all 0.2s;
         transition: all 0.2s;
@@ -81,7 +96,8 @@
         background: currentColor;
         opacity: 0;
     }
-    .link:hover::before, .link:focus::before {
+    .btn-view:hover::before,
+    .btn-view:focus::before {
         -webkit-transition: all 0.2s;
         -moz-transition: all 0.2s;
         transition: all 0.2s;
