@@ -7,13 +7,8 @@
     "baseUrl": ".",
     "paths": {
         "@layouts/*": ["src/layouts/*"],
-
-        "@includesPortal/*": ["src/pages/portal/_includes/*"],
+        "@includes/*": ["src/includes/*"],
         "@components/*": ["src/components/*"],
-        "@componentsLayout/*": ["src/components/Layout/*"],
-        "@componentsForm/*": ["src/components/Form/*"],
-        "@componentsBtns/*": ["src/components/Btns/*"],
-        "@assets/*": ["src/assets/*"],
         "@styles/*": ["src/styles/*"],
     }
   }

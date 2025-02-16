@@ -1,0 +1,110 @@
+<div class="overflow-visible">
+    <section class="grid-main">
+        <a class="item" href="/systems/ips/dashboard/">
+            <div class="card bg-transparent border-0">
+                <div class="card-body">
+                    <i class="bi bi-trophy icon-boxed bg-danger"></i>
+                    <h3 class="card-title mb-1">IPS</h3>
+                    <p class="card-text mb-2">
+                        Complete the assessment in the Checklist.
+                    </p>
+                    <span class="btn-view text-danger">View</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="item" href="/systems/best_practices/main/">
+            <div class="card bg-transparent border-0">
+                <div class="card-body">
+                    <i class="bi bi-clipboard2-check icon-boxed bg-primary"></i>
+                    <h3 class="card-title mb-1">Best Practices</h3>
+                    <p class="card-text mb-2">
+                        View and submit your best practice here!
+                    </p>
+                    <span class="btn-view text-primary">View</span>
+                </div>
+            </div>
+        </a>
+    </section>
+</div>
+
+<style is:inline>
+    .grid-main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 20px 20px;
+        margin-top: -3.5rem;
+    }
+    .grid-main .item{
+        overflow: hidden;
+        justify-self: stretch;
+        align-self: stretch;
+        margin-bottom: 1rem;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0.3rem;
+        transition: all 0.2s;
+        background-color: #fff;
+        box-shadow: var(--bs-box-shadow) !important;
+    }
+    .grid-main .item:hover{
+        background-color: #f1f1f1;
+    }
+    @media (max-width: 576px) {
+        .grid-main {
+            grid-template-columns: 1fr;
+        }
+    }
+    .icon-boxed {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        vertical-align: top;
+        width: 5rem;
+        height: 5rem;
+        color: #fff;
+        font-size: 2rem;
+        border-radius: 50%;
+        background: #242323;
+    }
+
+    .btn-view{
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        background-color: transparent;
+    }
+    .btn-view::before {
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+        -webkit-transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        transition-delay: 0s;
+        content: "";
+        position: absolute;
+        top: 100%;
+        display: block;
+        width: calc(100% - 2px);
+        height: 1px;
+        background: currentColor;
+        opacity: 0;
+    }
+    .btn-view:hover::before,
+    .btn-view:focus::before {
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+        -webkit-transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        transition-delay: 0s;
+        top: calc(100% + 2px);
+        opacity: 1;
+    }
+</style>
