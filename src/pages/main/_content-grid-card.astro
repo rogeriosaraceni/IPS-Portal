@@ -1,30 +1,38 @@
+---
+const boxes = [
+    {
+        link: "https://ips-two.vercel.app/dashboard/",
+        icon: "bi bi-clipboard2-check bg-danger",
+        name: "IPS",
+        text: "Complete the assessment in the Checklist.",
+        view: "text-danger"
+    },
+    {
+        link: "#",
+        icon: "bi bi-trophy bg-primary",
+        name: "Best Practices",
+        text: "View and submit your best practice here!",
+        view: "text-primary"
+    },
+]
+---
+
 <div class="overflow-visible">
     <section class="grid-main">
-        <a class="item animate__animated animate__bounceInLeft" href="https://ips-two.vercel.app/dashboard/">
-            <div class="card bg-transparent border-0">
-                <div class="card-body">
-                    <i class="bi bi-trophy icon-boxed bg-danger"></i>
-                    <h3 class="card-title mb-1">IPS</h3>
-                    <p class="card-text mb-2">
-                        Complete the assessment in the Checklist.
-                    </p>
-                    <span class="btn-view text-danger">View</span>
-                </div>
-            </div>
-        </a>
-
-        <a class="item animate__animated animate__bounceInRight" href="/">
-            <div class="card bg-transparent border-0">
-                <div class="card-body">
-                    <i class="bi bi-clipboard2-check icon-boxed bg-primary"></i>
-                    <h3 class="card-title mb-1">Best Practices</h3>
-                    <p class="card-text mb-2">
-                        View and submit your best practice here!
-                    </p>
-                    <span class="btn-view text-primary">View</span>
-                </div>
-            </div>
-        </a>
+        {
+            boxes.map(box => (
+                <a class="item animate__animated animate__bounceInLeft" href={box.link}>
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <i class={`icon-boxed ${box.icon}`}></i>
+                            <h3 class="card-title mb-1">{box.name}</h3>
+                            <p class="card-text mb-2">{box.text}</p>
+                            <span class={`btn-view ${box.view}`}>View</span>
+                        </div>
+                    </div>
+                </a>
+            ))
+        }
     </section>
 </div>
 
@@ -46,18 +54,21 @@
         text-decoration: none;
         border-radius: 0.3rem;
         transition: all 0.2s;
-        background-color: #fff;
         box-shadow: var(--bs-box-shadow) !important;
     }
-    .grid-main .item:hover{
-        background-color: #f1f1f1;
+
+    .grid-main .item .card{
+        transition: all 0.3s;
+    }
+    .grid-main .item .card:hover{
+        background-color: #f0e6e6;
     }
     @media (max-width: 576px) {
         .grid-main {
             grid-template-columns: 1fr;
         }
     }
-    .icon-boxed {
+    .grid-main .item .icon-boxed {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -71,7 +82,7 @@
         background: #242323;
     }
 
-    .btn-view{
+    .grid-main .item .btn-view{
         display: inline-block;
         position: relative;
         text-decoration: none;
@@ -81,7 +92,7 @@
         font-weight: 600;
         background-color: transparent;
     }
-    .btn-view::before {
+    .grid-main .item .btn-view::before {
         -webkit-transition: all 0.2s;
         -moz-transition: all 0.2s;
         transition: all 0.2s;
@@ -97,8 +108,8 @@
         background: currentColor;
         opacity: 0;
     }
-    .btn-view:hover::before,
-    .btn-view:focus::before {
+    .grid-main .item:hover .btn-view::before,
+    .grid-main .item:focus .btn-view::before {
         -webkit-transition: all 0.2s;
         -moz-transition: all 0.2s;
         transition: all 0.2s;
