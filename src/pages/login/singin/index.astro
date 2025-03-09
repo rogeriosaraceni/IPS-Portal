@@ -1,0 +1,20 @@
+---
+import Layout from '@layouts/Layout.astro';
+import ContentLogo from './_content-logo.astro';
+import ContentForm from './_content-form.astro';
+import ContentFooter from './_content-footer.astro';
+
+import './_styles.css';
+---
+
+<Layout>
+    <main class="main-login">
+        <div class="container h-100">
+            <section class="grid-login">
+                <ContentLogo />
+                <ContentForm />
+            </section>
+        </div>
+    </main>
+    <ContentFooter />
+</Layout>

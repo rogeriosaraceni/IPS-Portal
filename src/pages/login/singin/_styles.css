@@ -1,0 +1,117 @@
+:root, [data-bs-theme=light] {
+    --bs-body-color: #212529;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: .9rem;
+    font-family: Roboto, sans-serif;
+    font-size: 0.875rem;
+    font-optical-sizing: auto;
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+.main-login {
+    flex: 1;
+    padding: 1rem;
+}
+.grid-login{
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) minmax(300px ,450px);
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo form";
+    gap: 10px 30px;
+    justify-items: stretch;
+    align-items: center;
+    align-content: start;
+    height: 100%;
+}
+.grid-login .item {
+    width: 100%;
+    height: 100%;
+    align-content: center;
+}
+.grid-login .item-logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.grid-login .item-logo img{
+    width: 100%;
+    max-width: 100px;
+}
+.grid-login .item-logo .name{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.grid-login .item-form {
+    grid-area: form;
+}
+.grid-login .item-form .card{
+    border: 1px solid #dfdfdf;
+}
+
+@media(max-width: 992px) {
+    .grid-login .item-logo img{
+        max-width: 50px;
+    }
+}
+
+@media(max-width: 768px) {
+    .grid-login{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "logo logo"
+            "form form";
+        gap: 0.5rem;
+        align-items: baseline;
+    }
+
+    .grid-login .item-logo{
+        justify-content: center;
+    }
+    .grid-login .item-logo img{
+        max-width: 30px;
+    }
+    .grid-login .item-logo .name{
+        font-size: 1.5rem;
+    }
+}
+
+.title-form{
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.container-form{
+    padding: 2rem;
+}
+
+.btn-submit{
+    margin-bottom: 1.5rem;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s;
+    color: #fff;
+    background-color: #6cb33f;
+}
+.btn-submit:hover{
+    color: #fff;
+    background-color: #599136;
+}
+
+.footer-login{
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+    background-color: #6cb33f;
+}
