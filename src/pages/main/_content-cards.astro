@@ -2,17 +2,15 @@
 const boxes = [
     {
         link: "https://ips-pillar-assessments.vercel.app/",
-        icon: "bi bi-clipboard2-check bg-danger",
+        icon: "bi bi-clipboard2-check",
         name: "Pillar Assessments",
         text: "Complete the assessment in the Checklist.",
-        view: "text-danger"
     },
     {
         link: "#",
-        icon: "bi bi-trophy bg-primary",
+        icon: "bi bi-trophy",
         name: "BOPs",
         text: "View and submit your best practice here!",
-        view: "text-primary"
     },
 ]
 ---
@@ -29,7 +27,6 @@ const boxes = [
                         </div>
 
                         <p class="mb-0">{box.text}</p>
-                        <span class={`btn-view ${box.view}`}>View</span>
                     </article>
                 </div>
             </a>
@@ -74,44 +71,6 @@ const boxes = [
         color: #fff;
         font-size: 1rem;
         border-radius: 50%;
-        background: #242323;
-    }
-
-    .card-systems .card .btn-view{
-        display: inline-block;
-        position: relative;
-        text-decoration: none;
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        font-weight: 600;
-        background-color: transparent;
-    }
-    .card-systems .card .btn-view::before {
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        transition: all 0.2s;
-        -webkit-transition-delay: 0s;
-        -moz-transition-delay: 0s;
-        transition-delay: 0s;
-        content: "";
-        position: absolute;
-        top: 100%;
-        display: block;
-        width: calc(100% - 2px);
-        height: 1px;
-        background: currentColor;
-        opacity: 0;
-    }
-    .card-systems .card:hover .btn-view::before,
-    .card-systems .card:focus .btn-view::before {
-        -webkit-transition: all 0.2s;
-        -moz-transition: all 0.2s;
-        transition: all 0.2s;
-        -webkit-transition-delay: 0s;
-        -moz-transition-delay: 0s;
-        transition-delay: 0s;
-        top: calc(100% + 2px);
-        opacity: 1;
+        background: #6cb33f;
     }
 </style>
