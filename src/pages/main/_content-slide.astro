@@ -1,0 +1,75 @@
+<style>
+    /* --------------------------------------------------------------------
+    splide-banner
+    ---------------------------------------------------------------------- */
+    #splide-banner{
+        height: 380px;
+    }
+    #splide-banner .splide__slide .text-content{
+        z-index: 1;
+        position: absolute;
+        padding: 1rem;
+        inset: 0;
+    }
+    #splide-banner .splide__slide img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    #splide-banner .splide__slide .bar{
+        display: flex;
+        align-items: end;
+        height: 33px;
+        background-color: var(--action-colors-defaul);
+    }
+
+    .splide__arrow {
+        background: 0;
+    }
+    .splide__arrow svg {
+        fill: #000;
+        height: 0.85rem;
+        width: 0.85rem;
+    }
+    .splide__arrow--prev {
+        left: -1.3rem;
+    }
+    .splide__arrow--next {
+        right: -1.3rem;
+    }
+</style>
+
+<div class="item mb-3 rounded overflow-hidden">
+    <section class="splide splide-default" id="splide-banner">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide" data-splide-interval="7000">
+                    <div class="text-content">
+                        <div class="d-flex align-items-end justify-content-end" style="height: 70%;">
+                            <h2 class="mb-2 text-black">Are There Allergic Reactions to Stevia?</h2>
+                        </div>
+                    </div>
+                    <img src="https://www.ingredion.com/content/dam/ingredion/other/corporate/Hi%20Res%20Woman%20in%20Lab%20AYP3253417.JPG"/>
+                </li>
+
+                <li class="splide__slide" data-splide-interval="7000">
+                    <img src="https://www.ingredion.com/content/dam/ingredion/2022/images/emea/tsl---taste-sweet-liberation/tsl_720_560%20Website%2050_50%20image%20-%20bottle%20-%20bev_sugar_reduction_ingredion_emea.jpg"/>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<script is:inline>
+    addEventListener("load", () => {
+        new Splide("#splide-banner", {
+            autoplay: true,
+            type: "loop",
+            gap: "1rem",
+            pagination : false,
+            pauseOnHover: true,
+            pauseOnFocus: true,
+
+        }).mount();
+    });
+</script>
