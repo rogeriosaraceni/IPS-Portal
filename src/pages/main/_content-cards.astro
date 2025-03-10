@@ -17,73 +17,57 @@ const boxes = [
 ]
 ---
 
-<div class="overflow-visible">
-    <section class="grid-main">
-        <div class="box-grid">
-            <section class="card-systems">
-                {
-                    boxes.map(box => (
-                        <a class="card item animate__animated animate__bounceInLeft" href={box.link}>
-                            <div class="card-body">
-                                <div class="content-icon-name">
-                                    <i class={`icon-boxed ${box.icon}`}></i>
-                                    <h3 class="card-title mb-1">{box.name}</h3>
-                                </div>
+<section class="card-systems animate__animated animate__bounceInLeft">
+    {
+        boxes.map(box => (
+            <a class="card shadow" href={box.link}>
+                <div class="card-body">
+                    <article class="content-card">
+                        <div class="content-icon-name">
+                            <i class={`icon-boxed ${box.icon}`}></i>
+                            <h3 class="card-title mb-0">{box.name}</h3>
+                        </div>
 
-                                <p class="card-text mb-2">{box.text}</p>
-                                <span class={`btn-view ${box.view}`}>View</span>
-                            </div>
-                        </a>
-                    ))
-                }
-            </section>
-        </div>
-
-        <div class="box-grid"></div>
-    </section>
-</div>
-
-<style is:inline>
-    .grid-main{
-        display: grid;
-        justify-content: center;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        gap: 20px 20px;
-        margin-top: -3.5rem;
-        background-color: red;
+                        <p class="mb-0">{box.text}</p>
+                        <span class={`btn-view ${box.view}`}>View</span>
+                    </article>
+                </div>
+            </a>
+        ))
     }
-    .grid-main .box-grid{
-        overflow: hidden;
-        justify-self: stretch;
-        align-self: stretch;
-        background-color: blueviolet;
-    }
+</section>
 
-
+<style>
     .card-systems{
         display: flex;
+        gap: 1.5rem;
         flex-direction: column;
     }
     .card-systems .card {
+        text-decoration: none;
+        border: 1px solid #dfdfdf;
         border-radius: 0.3rem;
         transition: all 0.2s;
-        box-shadow: var(--bs-box-shadow) !important;
     }
     .card-systems .card:hover{
         background-color: #e3eed6;
     }
 
+    .card-systems .content-card{
+        display: flex;
+        flex-direction: column;
+    }
+
     .content-icon-name{
         display: flex;
         align-items: center;
+        gap: 1rem;
     }
 
     .card-systems .card .icon-boxed {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 1rem;
         vertical-align: top;
         width: 2rem;
         height: 2rem;
@@ -129,13 +113,5 @@ const boxes = [
         transition-delay: 0s;
         top: calc(100% + 2px);
         opacity: 1;
-    }
-
-
-
-    @media (max-width: 576px) {
-        .grid-main {
-            grid-template-columns: 1fr;
-        }
     }
 </style>
