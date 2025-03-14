@@ -18,7 +18,7 @@
     }
     #splide-banner .splide__slide img {
         width: 100%;
-        height: auto;
+        height: 100%;
         object-fit: cover;
     }
     .splide__arrow {
@@ -47,7 +47,7 @@
 
                 <li class="splide__slide" data-splide-interval="7000">
                     <div class="text-content">
-                        <div class="d-flex align-items-end justify-content-end" style="height: 70%;">
+                        <div class="d-flex align-items-end justify-content-end h-100">
                             <h2 class="mb-2 text-black">Are There Allergic Reactions to Stevia?</h2>
                         </div>
                     </div>
@@ -63,11 +63,12 @@
         new Splide("#splide-banner", {
             autoplay: true,
             type: "loop",
-            gap: "1rem",
-            padding: "1rem",
+            gap: "0.5rem",
+            padding: "0.5rem",
             pagination : false,
             pauseOnHover: true,
             pauseOnFocus: true,
+            fixedHeight: "480px",
         }).mount();
     });
 </script>
