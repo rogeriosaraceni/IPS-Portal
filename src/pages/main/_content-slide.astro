@@ -3,23 +3,25 @@
     splide-banner
     ---------------------------------------------------------------------- */
     #splide-banner{
-        height: 500px;
-    }
-    #splide-banner .splide__slide .text-content{
-        z-index: 1;
-        position: absolute;
-        padding: 1rem;
-        inset: 0;
+        /* height: 380px; */
+        border-radius: var(--bs-border-radius) !important;
+        background-color: #fff;
+        border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
     }
 
     #splide-banner .splide__slide{
-        border-radius: 1rem;
         overflow: hidden;
     }
-    #splide-banner .splide__slide img {
-        width: 100%;
+    #splide-banner .splide__slide .content{
+        position: relative;
+        display: flex;
+        padding: 2rem 3rem;
         height: 100%;
-        object-fit: cover;
+    }
+    #splide-banner .splide__slide img {
+        /* width: 100%;
+        height: 100%;
+        object-fit: cover; */
     }
     .splide__arrow {
         background: 0;
@@ -35,6 +37,8 @@
     .splide__arrow--next {
         right: -1.3rem;
     }
+
+
 </style>
 
 <div class="item mb-3 rounded overflow-hidden">
@@ -42,17 +46,30 @@
         <div class="splide__track">
             <ul class="splide__list">
                 <li class="splide__slide" data-splide-interval="7000">
-                    <img src="/assets/images/pages/main/1.jpg?v=1.0"/>
-                </li>
 
-                <li class="splide__slide" data-splide-interval="7000">
-                    <div class="text-content">
-                        <div class="d-flex align-items-end justify-content-end h-100">
-                            <h2 class="mb-2 text-black">Are There Allergic Reactions to Stevia?</h2>
+                    <div class="content">
+                        <div class="d-flex flex-column justify-content-center w-100 h-100 text-dark">
+                            <div class="d-flex gap-4 w-100">
+                                <div class="fs-5 flex-fill">
+                                    <h2 class="mb-5">
+                                        <img src="/assets/images/pages/main/megafone1.png?v=1.0" style="max-width: 90px;"/>
+                                        <span class="border-bottom border-success">IMPORTANT NOTICE</span>
+                                    </h2>
+                                    <div class="ps-3">
+                                        <p>For the month of January, the Pilar Assessments<br>module is avail</p>
+                                        <p>Don't miss the deadline and send your checklist!</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <img class="img-fluid" src="/assets/images/pages/main/note1.png?v=1.0" style="max-width: 340px;"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <img src="/assets/images/pages/main/2.jpg?v=1.0"/>
                 </li>
+
+
             </ul>
         </div>
     </section>
@@ -63,12 +80,12 @@
         new Splide("#splide-banner", {
             autoplay: true,
             type: "loop",
-            gap: "0.5rem",
-            padding: "0.5rem",
+            gap: "1rem",
+            padding: '0',
             pagination : false,
             pauseOnHover: true,
             pauseOnFocus: true,
-            fixedHeight: "480px",
+            fixedHeight: "350px",
         }).mount();
     });
 </script>
